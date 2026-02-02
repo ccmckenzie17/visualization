@@ -1,0 +1,101 @@
+---
+title: "R Assignment 3 visualization code"
+output: html_notebook
+---
+
+
+```{r}
+# load packages
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+library(stringr)
+library(viridis)
+```
+
+```{r}
+# import data from .csv file
+data = read.csv('/Users/corymckenzie/Desktop/visualization/02_activities/Assignment_3/toronto-beaches-observations.csv')
+```
+
+```{r}
+# format data for plot
+
+# convert the date column to R date data type (w/ lubridate package)
+data$dataCollectionDate = as.Date(data$dataCollectionDate)
+
+# get the total waterfowl observations per beach per year
+data_yearly <- data %>%
+  mutate(year = year(dataCollectionDate)) %>%
+  group_by(year, beachName) %>%
+  summarise(
+    waterFowl = sum(waterFowl, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# get the average for observations across all beaches
+avg_yearly <- data_yearly %>%
+  group_by(year) %>%
+  summarise(
+    waterFowl = mean(waterFowl, na.rm = TRUE),
+    .groups = "drop"
+  )
+```
+
+```{r}
+
+# plot the graph with both coloured lines for individual beaches and the 
+# overall average in black
+
+p = ggplot() +
+  geom_line( #individual beaches
+    data = data_yearly,
+    aes(x = year, y = waterFowl, color = beachName),
+    linewidth = 1,
+    alpha = 0.7
+  ) +
+  geom_point(
+    data = data_yearly,
+    aes(x = year, y = waterFowl),
+    color = "black",
+    size = 0.5
+  ) +
+  geom_line( # all beach average
+    data = avg_yearly,
+    aes(x = year, y = waterFowl),
+    color = "black",
+    linewidth = 1.5
+  ) +
+  geom_point(
+    data = avg_yearly,
+    aes(x = year, y = waterFowl),
+    color = "black",
+    size = 2
+  ) +
+   scale_color_viridis_d(option = "C") + # use viridis package to add colorblind
+                                         # friendly palate 
+  labs( # add labels 
+    title = "Yearly Waterfowl Counts by Beach",
+    subtitle = "Black line shows average across all beaches",
+    x = "Year",
+    y = "Number of waterfowl observed",
+    color = "Beach"
+  ) +
+  theme_minimal() #select minimalist theme 
+#display graph
+p
+```
+
+
+```{r}
+# save visualization as jpeg image
+ggsave(
+  filename = "visualization_2.jpeg",
+  plot = p,
+  width = 8,
+  height = 5,
+  units = "in",
+  dpi = 600
+)
+```
+

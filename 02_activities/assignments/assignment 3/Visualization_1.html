@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4c1c1d0488a757f4deecf40d3dec4e80 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index:9999;
+    background-color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    font-size: 13px;   /* ~30% smaller than 18px */
+    font-weight: bold;
+">
+Waterfowl Observed per Toronto Beach Since 2008
+</div>
+    
+            <div class="folium-map" id="map_4c1c1d0488a757f4deecf40d3dec4e80" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4c1c1d0488a757f4deecf40d3dec4e80 = L.map(
+                "map_4c1c1d0488a757f4deecf40d3dec4e80",
+                {
+                    center: [43.6532, -79.3832],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bdbe126a8249407b3e48a8a1cd609df0 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_bdbe126a8249407b3e48a8a1cd609df0.addTo(map_4c1c1d0488a757f4deecf40d3dec4e80);
+        
+    
+            var circle_marker_5e5682a571dbf3ee8390a9f4e9a6b20c = L.circleMarker(
+                [43.66184, -79.30703],
+                {"bubblingMouseEvents": true, "color": "#148a00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#148a00ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.3168, "stroke": true, "weight": 3}
+            ).addTo(map_4c1c1d0488a757f4deecf40d3dec4e80);
+        
+    
+        var popup_5902596b5faf1ca27f48747a106eaf0a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_021b888e4e8915d336930b28cf1144cd = $(`<div id="html_021b888e4e8915d336930b28cf1144cd" style="width: 100.0%; height: 100.0%;"><b>Woodbine Beach</b><br>Waterfowl Observed: 31584</div>`)[0];
+                popup_5902596b5faf1ca27f48747a106eaf0a.setContent(html_021b888e4e8915d336930b28cf1144cd);
+            
+        
+
+        circle_marker_5e5682a571dbf3ee8390a9f4e9a6b20c.bindPopup(popup_5902596b5faf1ca27f48747a106eaf0a)
+        ;
+
+        
+    
+    
+            circle_marker_5e5682a571dbf3ee8390a9f4e9a6b20c.bindTooltip(
+                `<div>
+                     Woodbine Beach: 31584
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a6b692f00e74d4a7ab9bec08be84deef = L.circleMarker(
+                [43.66687, -79.29447],
+                {"bubblingMouseEvents": true, "color": "#fff000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff000ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.2432, "stroke": true, "weight": 3}
+            ).addTo(map_4c1c1d0488a757f4deecf40d3dec4e80);
+        
+    
+        var popup_d188cb4d3ea1f74c0b5507581d107837 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_85fc61686b8568bfe41f5e018d32b0d4 = $(`<div id="html_85fc61686b8568bfe41f5e018d32b0d4" style="width: 100.0%; height: 100.0%;"><b>Kew-Balmy Beach</b><br>Waterfowl Observed: 51216</div>`)[0];
+                popup_d188cb4d3ea1f74c0b5507581d107837.setContent(html_85fc61686b8568bfe41f5e018d32b0d4);
+            
+        
+
+        circle_marker_a6b692f00e74d4a7ab9bec08be84deef.bindPopup(popup_d188cb4d3ea1f74c0b5507581d107837)
+        ;
+
+        
+    
+    
+            circle_marker_a6b692f00e74d4a7ab9bec08be84deef.bindTooltip(
+                `<div>
+                     Kew-Balmy Beach: 51216
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_763ee990d74a69fcea220f1622a1ab02 = L.circleMarker(
+                [43.63697, -79.34395],
+                {"bubblingMouseEvents": true, "color": "#48a400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#48a400ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.14, "stroke": true, "weight": 3}
+            ).addTo(map_4c1c1d0488a757f4deecf40d3dec4e80);
+        
+    
+        var popup_d0b9336b63a4d0259e4907c8744bd3f5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cd11778784f9e79da34ded12947dc817 = $(`<div id="html_cd11778784f9e79da34ded12947dc817" style="width: 100.0%; height: 100.0%;"><b>Cherry Beach</b><br>Waterfowl Observed: 35700</div>`)[0];
+                popup_d0b9336b63a4d0259e4907c8744bd3f5.setContent(html_cd11778784f9e79da34ded12947dc817);
+            
+        
+
+        circle_marker_763ee990d74a69fcea220f1622a1ab02.bindPopup(popup_d0b9336b63a4d0259e4907c8744bd3f5)
+        ;
+
+        
+    
+    
+            circle_marker_763ee990d74a69fcea220f1622a1ab02.bindTooltip(
+                `<div>
+                     Cherry Beach: 35700
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2cef1eb7adf9d35108a2af706e59dbd2 = L.circleMarker(
+                [43.6375, -79.4517],
+                {"bubblingMouseEvents": true, "color": "#ff4300ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4300ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.9458, "stroke": true, "weight": 3}
+            ).addTo(map_4c1c1d0488a757f4deecf40d3dec4e80);
+        
+    
+        var popup_c3f409190999eb9f2d9152b426d10d1b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4ef1aadc3cc7ef27fe096986d81b6845 = $(`<div id="html_4ef1aadc3cc7ef27fe096986d81b6845" style="width: 100.0%; height: 100.0%;"><b>Sunnyside Beach</b><br>Waterfowl Observed: 64729</div>`)[0];
+                popup_c3f409190999eb9f2d9152b426d10d1b.setContent(html_4ef1aadc3cc7ef27fe096986d81b6845);
+            
+        
+
+        circle_marker_2cef1eb7adf9d35108a2af706e59dbd2.bindPopup(popup_c3f409190999eb9f2d9152b426d10d1b)
+        ;
+
+        
+    
+    
+            circle_marker_2cef1eb7adf9d35108a2af706e59dbd2.bindTooltip(
+                `<div>
+                     Sunnyside Beach: 64729
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80e7cc191974ff5eb4e5e69c78ad3af9 = L.circleMarker(
+                [43.61975, -79.39429],
+                {"bubblingMouseEvents": true, "color": "#00731aff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00731aff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.5912, "stroke": true, "weight": 3}
+            ).addTo(map_4c1c1d0488a757f4deecf40d3dec4e80);
+        
+    
+        var popup_7150eb9a72d00e0eea64e27c13701b12 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5767d846f195199b9367d0fb006012dc = $(`<div id="html_5767d846f195199b9367d0fb006012dc" style="width: 100.0%; height: 100.0%;"><b>Hanlan's Point Beach</b><br>Waterfowl Observed: 27956</div>`)[0];
+                popup_7150eb9a72d00e0eea64e27c13701b12.setContent(html_5767d846f195199b9367d0fb006012dc);
+            
+        
+
+        circle_marker_80e7cc191974ff5eb4e5e69c78ad3af9.bindPopup(popup_7150eb9a72d00e0eea64e27c13701b12)
+        ;
+
+        
+    
+    
+            circle_marker_80e7cc191974ff5eb4e5e69c78ad3af9.bindTooltip(
+                `<div>
+                     Hanlan's Point Beach: 27956
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4bdb960a99f229d3a4a863bb1f03edf9 = L.circleMarker(
+                [43.61251, -79.38199],
+                {"bubblingMouseEvents": true, "color": "#0005f4ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0005f4ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.173, "stroke": true, "weight": 3}
+            ).addTo(map_4c1c1d0488a757f4deecf40d3dec4e80);
+        
+    
+        var popup_3c288df80250b9322797e778a496d56e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ab44b2ce73b0d3464e820728c3c3b75e = $(`<div id="html_ab44b2ce73b0d3464e820728c3c3b75e" style="width: 100.0%; height: 100.0%;"><b>Gibraltar Point Beach</b><br>Waterfowl Observed: 10865</div>`)[0];
+                popup_3c288df80250b9322797e778a496d56e.setContent(html_ab44b2ce73b0d3464e820728c3c3b75e);
+            
+        
+
+        circle_marker_4bdb960a99f229d3a4a863bb1f03edf9.bindPopup(popup_3c288df80250b9322797e778a496d56e)
+        ;
+
+        
+    
+    
+            circle_marker_4bdb960a99f229d3a4a863bb1f03edf9.bindTooltip(
+                `<div>
+                     Gibraltar Point Beach: 10865
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_abcbdde8c26621af6f2ee5a228ae29d4 = L.circleMarker(
+                [43.62998, -79.35225],
+                {"bubblingMouseEvents": true, "color": "#006a2cff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#006a2cff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.3048, "stroke": true, "weight": 3}
+            ).addTo(map_4c1c1d0488a757f4deecf40d3dec4e80);
+        
+    
+        var popup_377b7dcfa452961dbc6046889adf6043 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_70cefba665627fa3e6bc50e8d984f43a = $(`<div id="html_70cefba665627fa3e6bc50e8d984f43a" style="width: 100.0%; height: 100.0%;"><b>Ward's Island Beach</b><br>Waterfowl Observed: 26524</div>`)[0];
+                popup_377b7dcfa452961dbc6046889adf6043.setContent(html_70cefba665627fa3e6bc50e8d984f43a);
+            
+        
+
+        circle_marker_abcbdde8c26621af6f2ee5a228ae29d4.bindPopup(popup_377b7dcfa452961dbc6046889adf6043)
+        ;
+
+        
+    
+    
+            circle_marker_abcbdde8c26621af6f2ee5a228ae29d4.bindTooltip(
+                `<div>
+                     Ward's Island Beach: 26524
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_95da0f47344710e473d2631e621a6709 = L.circleMarker(
+                [43.5853, -79.5446],
+                {"bubblingMouseEvents": true, "color": "#239200ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#239200ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.5598, "stroke": true, "weight": 3}
+            ).addTo(map_4c1c1d0488a757f4deecf40d3dec4e80);
+        
+    
+        var popup_8ab65a6926c8d5c2777abfbe222852d7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5e6929fdfe7362b9ce3dfced4bacb18b = $(`<div id="html_5e6929fdfe7362b9ce3dfced4bacb18b" style="width: 100.0%; height: 100.0%;"><b>Marie Curtis Park East Beach</b><br>Waterfowl Observed: 32799</div>`)[0];
+                popup_8ab65a6926c8d5c2777abfbe222852d7.setContent(html_5e6929fdfe7362b9ce3dfced4bacb18b);
+            
+        
+
+        circle_marker_95da0f47344710e473d2631e621a6709.bindPopup(popup_8ab65a6926c8d5c2777abfbe222852d7)
+        ;
+
+        
+    
+    
+            circle_marker_95da0f47344710e473d2631e621a6709.bindTooltip(
+                `<div>
+                     Marie Curtis Park East Beach: 32799
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b175b1db4b3b441e713174b8132312db = L.circleMarker(
+                [43.7137, -79.22629],
+                {"bubblingMouseEvents": true, "color": "#57ac00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#57ac00ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.366399999999999, "stroke": true, "weight": 3}
+            ).addTo(map_4c1c1d0488a757f4deecf40d3dec4e80);
+        
+    
+        var popup_602df3fd22cbbe8e607b0b35f4af746a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef46b8a186dd4fdf3a05d4dd5990e1cc = $(`<div id="html_ef46b8a186dd4fdf3a05d4dd5990e1cc" style="width: 100.0%; height: 100.0%;"><b>Bluffer's Beach Park</b><br>Waterfowl Observed: 36832</div>`)[0];
+                popup_602df3fd22cbbe8e607b0b35f4af746a.setContent(html_ef46b8a186dd4fdf3a05d4dd5990e1cc);
+            
+        
+
+        circle_marker_b175b1db4b3b441e713174b8132312db.bindPopup(popup_602df3fd22cbbe8e607b0b35f4af746a)
+        ;
+
+        
+    
+    
+            circle_marker_b175b1db4b3b441e713174b8132312db.bindTooltip(
+                `<div>
+                     Bluffer's Beach Park: 36832
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6ca50ae654de77a493953f1d979cd857 = L.circleMarker(
+                [43.61586, -79.37422],
+                {"bubblingMouseEvents": true, "color": "#ff9500ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff9500ff", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.6622, "stroke": true, "weight": 3}
+            ).addTo(map_4c1c1d0488a757f4deecf40d3dec4e80);
+        
+    
+        var popup_b34bd46134851c4a0251c47a186d9d48 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_236c03791175cea78a275c7eae0347e0 = $(`<div id="html_236c03791175cea78a275c7eae0347e0" style="width: 100.0%; height: 100.0%;"><b>Centre Island Beach</b><br>Waterfowl Observed: 58311</div>`)[0];
+                popup_b34bd46134851c4a0251c47a186d9d48.setContent(html_236c03791175cea78a275c7eae0347e0);
+            
+        
+
+        circle_marker_6ca50ae654de77a493953f1d979cd857.bindPopup(popup_b34bd46134851c4a0251c47a186d9d48)
+        ;
+
+        
+    
+    
+            circle_marker_6ca50ae654de77a493953f1d979cd857.bindTooltip(
+                `<div>
+                     Centre Island Beach: 58311
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+    var color_map_b6648dfbda0280ac70c7bf873838241d = {};
+
+    
+    color_map_b6648dfbda0280ac70c7bf873838241d.color = d3.scale.threshold()
+              .domain([10000.0, 10120.240480961924, 10240.480961923848, 10360.721442885771, 10480.961923847695, 10601.20240480962, 10721.442885771543, 10841.683366733467, 10961.92384769539, 11082.164328657314, 11202.404809619238, 11322.645290581162, 11442.885771543086, 11563.12625250501, 11683.366733466934, 11803.607214428857, 11923.847695390781, 12044.088176352705, 12164.328657314629, 12284.569138276553, 12404.809619238476, 12525.0501002004, 12645.290581162324, 12765.531062124248, 12885.771543086172, 13006.012024048096, 13126.25250501002, 13246.492985971945, 13366.733466933867, 13486.973947895793, 13607.214428857715, 13727.45490981964, 13847.695390781562, 13967.935871743488, 14088.17635270541, 14208.416833667336, 14328.657314629258, 14448.897795591183, 14569.138276553105, 14689.37875751503, 14809.619238476953, 14929.859719438879, 15050.1002004008, 15170.340681362726, 15290.581162324648, 15410.821643286574, 15531.062124248496, 15651.302605210421, 15771.543086172343, 15891.78356713427, 16012.024048096191, 16132.264529058117, 16252.505010020039, 16372.745490981964, 16492.98597194389, 16613.226452905812, 16733.466933867734, 16853.70741482966, 16973.947895791585, 17094.188376753507, 17214.42885771543, 17334.669338677355, 17454.90981963928, 17575.150300601203, 17695.390781563125, 17815.63126252505, 17935.871743486976, 18056.112224448898, 18176.35270541082, 18296.593186372746, 18416.83366733467, 18537.074148296593, 18657.314629258515, 18777.55511022044, 18897.795591182366, 19018.03607214429, 19138.27655310621, 19258.517034068136, 19378.75751503006, 19498.997995991984, 19619.238476953906, 19739.47895791583, 19859.719438877757, 19979.95991983968, 20100.2004008016, 20220.440881763527, 20340.681362725452, 20460.921843687374, 20581.162324649296, 20701.402805611222, 20821.643286573148, 20941.88376753507, 21062.12424849699, 21182.364729458917, 21302.605210420843, 21422.845691382765, 21543.086172344687, 21663.326653306613, 21783.56713426854, 21903.80761523046, 22024.048096192382, 22144.288577154308, 22264.529058116234, 22384.769539078156, 22505.010020040078, 22625.250501002003, 22745.49098196393, 22865.731462925854, 22985.971943887776, 23106.2124248497, 23226.452905811624, 23346.69338677355, 23466.93386773547, 23587.174348697394, 23707.41482965932, 23827.655310621245, 23947.895791583167, 24068.13627254509, 24188.376753507015, 24308.61723446894, 24428.857715430862, 24549.098196392784, 24669.33867735471, 24789.579158316636, 24909.819639278558, 25030.06012024048, 25150.300601202405, 25270.54108216433, 25390.781563126253, 25511.022044088175, 25631.2625250501, 25751.503006012026, 25871.743486973948, 25991.98396793587, 26112.224448897796, 26232.46492985972, 26352.705410821643, 26472.945891783565, 26593.18637274549, 26713.426853707413, 26833.66733466934, 26953.90781563126, 27074.148296593186, 27194.388777555112, 27314.629258517034, 27434.86973947896, 27555.11022044088, 27675.350701402807, 27795.59118236473, 27915.831663326655, 28036.072144288577, 28156.312625250503, 28276.553106212425, 28396.79358717435, 28517.034068136272, 28637.274549098198, 28757.51503006012, 28877.755511022046, 28997.995991983968, 29118.236472945893, 29238.476953907815, 29358.71743486974, 29478.957915831663, 29599.19839679359, 29719.43887775551, 29839.679358717436, 29959.919839679358, 30080.160320641284, 30200.400801603206, 30320.64128256513, 30440.881763527053, 30561.12224448898, 30681.3627254509, 30801.603206412827, 30921.84368737475, 31042.084168336674, 31162.324649298596, 31282.565130260522, 31402.805611222444, 31523.04609218437, 31643.28657314629, 31763.527054108217, 31883.76753507014, 32004.008016032065, 32124.248496993987, 32244.488977955913, 32364.729458917835, 32484.96993987976, 32605.210420841682, 32725.450901803608, 32845.69138276553, 32965.931863727455, 33086.172344689374, 33206.41282565131, 33326.653306613225, 33446.89378757515, 33567.13426853708, 33687.374749498995, 33807.61523046092, 33927.855711422846, 34048.096192384764, 34168.3366733467, 34288.577154308616, 34408.81763527054, 34529.05811623247, 34649.298597194385, 34769.53907815631, 34889.77955911824, 35010.020040080155, 35130.26052104209, 35250.501002004006, 35370.74148296593, 35490.98196392786, 35611.222444889776, 35731.46292585171, 35851.70340681363, 35971.94388777555, 36092.18436873748, 36212.4248496994, 36332.66533066132, 36452.90581162325, 36573.14629258517, 36693.3867735471, 36813.62725450902, 36933.86773547094, 37054.10821643287, 37174.34869739479, 37294.58917835671, 37414.82965931864, 37535.07014028056, 37655.31062124249, 37775.55110220441, 37895.791583166334, 38016.03206412826, 38136.27254509018, 38256.513026052104, 38376.75350701403, 38496.99398797595, 38617.23446893788, 38737.4749498998, 38857.715430861725, 38977.95591182365, 39098.19639278557, 39218.436873747494, 39338.67735470942, 39458.91783567134, 39579.15831663327, 39699.39879759519, 39819.639278557115, 39939.87975951904, 40060.12024048096, 40180.360721442885, 40300.60120240481, 40420.84168336673, 40541.08216432866, 40661.32264529058, 40781.563126252506, 40901.80360721443, 41022.04408817635, 41142.284569138275, 41262.5250501002, 41382.76553106212, 41503.00601202405, 41623.24649298597, 41743.486973947896, 41863.72745490982, 41983.96793587174, 42104.208416833666, 42224.44889779559, 42344.68937875751, 42464.92985971944, 42585.17034068136, 42705.41082164329, 42825.65130260521, 42945.89178356713, 43066.13226452906, 43186.37274549098, 43306.61322645291, 43426.853707414826, 43547.09418837675, 43667.33466933868, 43787.5751503006, 43907.81563126252, 44028.05611222445, 44148.29659318637, 44268.5370741483, 44388.777555110224, 44509.01803607214, 44629.25851703407, 44749.498997995994, 44869.73947895792, 44989.97995991984, 45110.22044088176, 45230.46092184369, 45350.701402805615, 45470.94188376753, 45591.18236472946, 45711.422845691384, 45831.66332665331, 45951.90380761523, 46072.144288577154, 46192.38476953908, 46312.625250501005, 46432.86573146292, 46553.10621242485, 46673.346693386775, 46793.5871743487, 46913.82765531062, 47034.068136272545, 47154.30861723447, 47274.549098196396, 47394.789579158314, 47515.03006012024, 47635.270541082165, 47755.51102204409, 47875.75150300601, 47995.991983967935, 48116.23246492986, 48236.47294589179, 48356.713426853705, 48476.95390781563, 48597.194388777556, 48717.43486973948, 48837.6753507014, 48957.915831663326, 49078.15631262525, 49198.39679358718, 49318.637274549095, 49438.87775551102, 49559.11823647295, 49679.35871743487, 49799.59919839679, 49919.839679358716, 50040.08016032064, 50160.32064128257, 50280.561122244486, 50400.80160320641, 50521.04208416834, 50641.28256513026, 50761.52304609218, 50881.76352705411, 51002.00400801603, 51122.24448897796, 51242.48496993988, 51362.7254509018, 51482.96593186373, 51603.20641282565, 51723.44689378757, 51843.6873747495, 51963.92785571142, 52084.16833667335, 52204.40881763527, 52324.64929859719, 52444.88977955912, 52565.130260521044, 52685.37074148296, 52805.61122244489, 52925.85170340681, 53046.09218436874, 53166.332665330665, 53286.57314629258, 53406.81362725451, 53527.054108216435, 53647.29458917836, 53767.53507014028, 53887.775551102204, 54008.01603206413, 54128.256513026055, 54248.496993987974, 54368.7374749499, 54488.977955911825, 54609.21843687375, 54729.45891783567, 54849.699398797595, 54969.93987975952, 55090.180360721446, 55210.420841683364, 55330.66132264529, 55450.901803607216, 55571.14228456914, 55691.38276553106, 55811.623246492985, 55931.86372745491, 56052.10420841684, 56172.344689378755, 56292.58517034068, 56412.825651302606, 56533.06613226453, 56653.30661322645, 56773.547094188376, 56893.7875751503, 57014.02805611223, 57134.268537074146, 57254.50901803607, 57374.749498998, 57494.98997995992, 57615.23046092184, 57735.47094188377, 57855.71142284569, 57975.95190380762, 58096.192384769536, 58216.43286573146, 58336.67334669339, 58456.91382765531, 58577.15430861723, 58697.39478957916, 58817.63527054108, 58937.87575150301, 59058.11623246493, 59178.35671342685, 59298.59719438878, 59418.837675350704, 59539.07815631262, 59659.31863727455, 59779.55911823647, 59899.7995991984, 60020.04008016032, 60140.28056112224, 60260.52104208417, 60380.761523046094, 60501.00200400801, 60621.24248496994, 60741.482965931864, 60861.72344689379, 60981.96392785571, 61102.20440881763, 61222.44488977956, 61342.685370741485, 61462.92585170341, 61583.16633266533, 61703.406813627254, 61823.64729458918, 61943.887775551106, 62064.128256513024, 62184.36873747495, 62304.609218436875, 62424.8496993988, 62545.09018036072, 62665.330661322645, 62785.57114228457, 62905.811623246496, 63026.052104208415, 63146.29258517034, 63266.533066132266, 63386.77354709419, 63507.01402805611, 63627.254509018036, 63747.49498997996, 63867.73547094189, 63987.975951903805, 64108.21643286573, 64228.45691382766, 64348.69739478958, 64468.9378757515, 64589.178356713426, 64709.41883767535, 64829.65931863728, 64949.899799599196, 65070.14028056112, 65190.38076152305, 65310.62124248497, 65430.86172344689, 65551.10220440882, 65671.34268537074, 65791.58316633267, 65911.82364729459, 66032.06412825652, 66152.30460921844, 66272.54509018036, 66392.78557114227, 66513.02605210421, 66633.26653306614, 66753.50701402806, 66873.74749498998, 66993.9879759519, 67114.22845691383, 67234.46893787576, 67354.70941883768, 67474.9498997996, 67595.19038076152, 67715.43086172345, 67835.67134268537, 67955.9118236473, 68076.15230460922, 68196.39278557114, 68316.63326653306, 68436.87374749499, 68557.11422845692, 68677.35470941884, 68797.59519038076, 68917.83567134268, 69038.07615230461, 69158.31663326654, 69278.55711422846, 69398.79759519038, 69519.0380761523, 69639.27855711423, 69759.51903807615, 69879.75951903808, 70000.0])
+              .range(['#0000ffff', '#0000feff', '#0001fcff', '#0002fbff', '#0003f9ff', '#0003f8ff', '#0004f6ff', '#0005f5ff', '#0006f3ff', '#0006f2ff', '#0007f0ff', '#0008efff', '#0009edff', '#000aebff', '#000aeaff', '#000be8ff', '#000ce7ff', '#000de5ff', '#000de4ff', '#000ee2ff', '#000fe1ff', '#0010dfff', '#0010deff', '#0011dcff', '#0012dbff', '#0013d9ff', '#0014d7ff', '#0014d6ff', '#0015d4ff', '#0016d3ff', '#0017d1ff', '#0017d0ff', '#0018ceff', '#0019cdff', '#001acbff', '#001bcaff', '#001bc8ff', '#001cc7ff', '#001dc5ff', '#001ec3ff', '#001ec2ff', '#001fc0ff', '#0020bfff', '#0021bdff', '#0021bcff', '#0022baff', '#0023b9ff', '#0024b7ff', '#0025b6ff', '#0025b4ff', '#0026b3ff', '#0027b1ff', '#0028afff', '#0028aeff', '#0029acff', '#002aabff', '#002ba9ff', '#002ca8ff', '#002ca6ff', '#002da5ff', '#002ea3ff', '#002fa2ff', '#002fa0ff', '#00309fff', '#00319dff', '#00329bff', '#00329aff', '#003398ff', '#003497ff', '#003595ff', '#003694ff', '#003692ff', '#003791ff', '#00388fff', '#00398eff', '#00398cff', '#003a8bff', '#003b89ff', '#003c87ff', '#003d86ff', '#003d84ff', '#003e83ff', '#003f81ff', '#004080ff', '#00407eff', '#00417dff', '#00427bff', '#00437aff', '#004378ff', '#004477ff', '#004575ff', '#004673ff', '#004772ff', '#004770ff', '#00486fff', '#00496dff', '#004a6cff', '#004a6aff', '#004b69ff', '#004c67ff', '#004d66ff', '#004e64ff', '#004e63ff', '#004f61ff', '#00505fff', '#00515eff', '#00515cff', '#00525bff', '#005359ff', '#005458ff', '#005456ff', '#005555ff', '#005653ff', '#005752ff', '#005850ff', '#00584fff', '#00594dff', '#005a4bff', '#005b4aff', '#005b48ff', '#005c47ff', '#005d45ff', '#005e44ff', '#005f42ff', '#005f41ff', '#00603fff', '#00613eff', '#00623cff', '#00623aff', '#006339ff', '#006437ff', '#006536ff', '#006534ff', '#006633ff', '#006731ff', '#006830ff', '#00692eff', '#00692dff', '#006a2bff', '#006b2aff', '#006c28ff', '#006c26ff', '#006d25ff', '#006e23ff', '#006f22ff', '#007020ff', '#00701fff', '#00711dff', '#00721cff', '#00731aff', '#007319ff', '#007417ff', '#007516ff', '#007614ff', '#007612ff', '#007711ff', '#00780fff', '#00790eff', '#007a0cff', '#007a0bff', '#007b09ff', '#007c08ff', '#007d06ff', '#007d05ff', '#007e03ff', '#007f02ff', '#008000ff', '#018100ff', '#028100ff', '#048200ff', '#058300ff', '#078400ff', '#088400ff', '#0a8500ff', '#0b8600ff', '#0d8700ff', '#0e8700ff', '#108800ff', '#118900ff', '#138a00ff', '#158a00ff', '#168b00ff', '#188c00ff', '#198d00ff', '#1b8e00ff', '#1c8e00ff', '#1e8f00ff', '#1f9000ff', '#219100ff', '#229100ff', '#249200ff', '#259300ff', '#279400ff', '#299400ff', '#2a9500ff', '#2c9600ff', '#2d9700ff', '#2f9800ff', '#309800ff', '#329900ff', '#339a00ff', '#359b00ff', '#369b00ff', '#389c00ff', '#399d00ff', '#3b9e00ff', '#3d9e00ff', '#3e9f00ff', '#40a000ff', '#41a100ff', '#43a100ff', '#44a200ff', '#46a300ff', '#47a400ff', '#49a500ff', '#4aa500ff', '#4ca600ff', '#4da700ff', '#4fa800ff', '#51a800ff', '#52a900ff', '#54aa00ff', '#55ab00ff', '#57ab00ff', '#58ac00ff', '#5aad00ff', '#5bae00ff', '#5daf00ff', '#5eaf00ff', '#60b000ff', '#61b100ff', '#63b200ff', '#65b200ff', '#66b300ff', '#68b400ff', '#69b500ff', '#6bb500ff', '#6cb600ff', '#6eb700ff', '#6fb800ff', '#71b800ff', '#72b900ff', '#74ba00ff', '#75bb00ff', '#77bc00ff', '#79bc00ff', '#7abd00ff', '#7cbe00ff', '#7dbf00ff', '#7fbf00ff', '#80c000ff', '#82c100ff', '#83c200ff', '#85c200ff', '#86c300ff', '#88c400ff', '#8ac500ff', '#8bc500ff', '#8dc600ff', '#8ec700ff', '#90c800ff', '#91c900ff', '#93c900ff', '#94ca00ff', '#96cb00ff', '#97cc00ff', '#99cc00ff', '#9acd00ff', '#9cce00ff', '#9ecf00ff', '#9fcf00ff', '#a1d000ff', '#a2d100ff', '#a4d200ff', '#a5d300ff', '#a7d300ff', '#a8d400ff', '#aad500ff', '#abd600ff', '#add600ff', '#aed700ff', '#b0d800ff', '#b2d900ff', '#b3d900ff', '#b5da00ff', '#b6db00ff', '#b8dc00ff', '#b9dc00ff', '#bbdd00ff', '#bcde00ff', '#bedf00ff', '#bfe000ff', '#c1e000ff', '#c2e100ff', '#c4e200ff', '#c6e300ff', '#c7e300ff', '#c9e400ff', '#cae500ff', '#cce600ff', '#cde600ff', '#cfe700ff', '#d0e800ff', '#d2e900ff', '#d3ea00ff', '#d5ea00ff', '#d6eb00ff', '#d8ec00ff', '#daed00ff', '#dbed00ff', '#ddee00ff', '#deef00ff', '#e0f000ff', '#e1f000ff', '#e3f100ff', '#e4f200ff', '#e6f300ff', '#e7f300ff', '#e9f400ff', '#eaf500ff', '#ecf600ff', '#eef700ff', '#eff700ff', '#f1f800ff', '#f2f900ff', '#f4fa00ff', '#f5fa00ff', '#f7fb00ff', '#f8fc00ff', '#fafd00ff', '#fbfd00ff', '#fdfe00ff', '#feff00ff', '#ffff00ff', '#fffd00ff', '#fffc00ff', '#fffa00ff', '#fff900ff', '#fff700ff', '#fff600ff', '#fff400ff', '#fff300ff', '#fff100ff', '#fff000ff', '#ffee00ff', '#ffed00ff', '#ffeb00ff', '#ffe900ff', '#ffe800ff', '#ffe600ff', '#ffe500ff', '#ffe300ff', '#ffe200ff', '#ffe000ff', '#ffdf00ff', '#ffdd00ff', '#ffdc00ff', '#ffda00ff', '#ffd900ff', '#ffd700ff', '#ffd500ff', '#ffd400ff', '#ffd200ff', '#ffd100ff', '#ffcf00ff', '#ffce00ff', '#ffcc00ff', '#ffcb00ff', '#ffc900ff', '#ffc800ff', '#ffc600ff', '#ffc500ff', '#ffc300ff', '#ffc100ff', '#ffc000ff', '#ffbe00ff', '#ffbd00ff', '#ffbb00ff', '#ffba00ff', '#ffb800ff', '#ffb700ff', '#ffb500ff', '#ffb400ff', '#ffb200ff', '#ffb000ff', '#ffaf00ff', '#ffad00ff', '#ffac00ff', '#ffaa00ff', '#ffa900ff', '#ffa700ff', '#ffa600ff', '#ffa400ff', '#ffa300ff', '#ffa100ff', '#ffa000ff', '#ff9e00ff', '#ff9c00ff', '#ff9b00ff', '#ff9900ff', '#ff9800ff', '#ff9600ff', '#ff9500ff', '#ff9300ff', '#ff9200ff', '#ff9000ff', '#ff8f00ff', '#ff8d00ff', '#ff8c00ff', '#ff8a00ff', '#ff8800ff', '#ff8700ff', '#ff8500ff', '#ff8400ff', '#ff8200ff', '#ff8100ff', '#ff7f00ff', '#ff7e00ff', '#ff7c00ff', '#ff7b00ff', '#ff7900ff', '#ff7800ff', '#ff7600ff', '#ff7400ff', '#ff7300ff', '#ff7100ff', '#ff7000ff', '#ff6e00ff', '#ff6d00ff', '#ff6b00ff', '#ff6a00ff', '#ff6800ff', '#ff6700ff', '#ff6500ff', '#ff6400ff', '#ff6200ff', '#ff6000ff', '#ff5f00ff', '#ff5d00ff', '#ff5c00ff', '#ff5a00ff', '#ff5900ff', '#ff5700ff', '#ff5600ff', '#ff5400ff', '#ff5300ff', '#ff5100ff', '#ff5000ff', '#ff4e00ff', '#ff4c00ff', '#ff4b00ff', '#ff4900ff', '#ff4800ff', '#ff4600ff', '#ff4500ff', '#ff4300ff', '#ff4200ff', '#ff4000ff', '#ff3f00ff', '#ff3d00ff', '#ff3c00ff', '#ff3a00ff', '#ff3800ff', '#ff3700ff', '#ff3500ff', '#ff3400ff', '#ff3200ff', '#ff3100ff', '#ff2f00ff', '#ff2e00ff', '#ff2c00ff', '#ff2b00ff', '#ff2900ff', '#ff2800ff', '#ff2600ff', '#ff2400ff', '#ff2300ff', '#ff2100ff', '#ff2000ff', '#ff1e00ff', '#ff1d00ff', '#ff1b00ff', '#ff1a00ff', '#ff1800ff', '#ff1700ff', '#ff1500ff', '#ff1400ff', '#ff1200ff', '#ff1000ff', '#ff0f00ff', '#ff0d00ff', '#ff0c00ff', '#ff0a00ff', '#ff0900ff', '#ff0700ff', '#ff0600ff', '#ff0400ff', '#ff0300ff', '#ff0100ff', '#ff0000ff']);
+    
+
+    color_map_b6648dfbda0280ac70c7bf873838241d.x = d3.scale.linear()
+              .domain([10000.0, 70000.0])
+              .range([0, 450 - 50]);
+
+    color_map_b6648dfbda0280ac70c7bf873838241d.legend = L.control({position: 'topright'});
+    color_map_b6648dfbda0280ac70c7bf873838241d.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_b6648dfbda0280ac70c7bf873838241d.legend.addTo(map_4c1c1d0488a757f4deecf40d3dec4e80);
+
+    color_map_b6648dfbda0280ac70c7bf873838241d.xAxis = d3.svg.axis()
+        .scale(color_map_b6648dfbda0280ac70c7bf873838241d.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([10000.0, 30000.0, 50000.0, 70000.0]);
+
+    color_map_b6648dfbda0280ac70c7bf873838241d.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_b6648dfbda0280ac70c7bf873838241d.g = color_map_b6648dfbda0280ac70c7bf873838241d.svg.append("g")
+        .attr("class", "key")
+        .attr("fill", "black")
+        .attr("transform", "translate(25,16)");
+
+    color_map_b6648dfbda0280ac70c7bf873838241d.g.selectAll("rect")
+        .data(color_map_b6648dfbda0280ac70c7bf873838241d.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_b6648dfbda0280ac70c7bf873838241d.x(color_map_b6648dfbda0280ac70c7bf873838241d.color.domain()[i - 1]) : color_map_b6648dfbda0280ac70c7bf873838241d.x.range()[0],
+            x1: i < color_map_b6648dfbda0280ac70c7bf873838241d.color.domain().length ? color_map_b6648dfbda0280ac70c7bf873838241d.x(color_map_b6648dfbda0280ac70c7bf873838241d.color.domain()[i]) : color_map_b6648dfbda0280ac70c7bf873838241d.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 40 - 30)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_b6648dfbda0280ac70c7bf873838241d.g.call(color_map_b6648dfbda0280ac70c7bf873838241d.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .attr("fill", "black")
+        .text("Number of Waterfowl Observed");
+    
+            tile_layer_bdbe126a8249407b3e48a8a1cd609df0.addTo(map_4c1c1d0488a757f4deecf40d3dec4e80);
+        
+</script>
+</html>
